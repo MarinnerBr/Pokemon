@@ -17,6 +17,7 @@ class PokemonlistController: NSObject {
     var alertMessage = "Request Fail"
     var alertActionTitle = "OK"
     var withIdentifier = "cellList"
+    var withIdentifier2 = "detail"
     
     var numberOfRowsInSection: Int {
         return pokemonList?.results?.count ?? 0

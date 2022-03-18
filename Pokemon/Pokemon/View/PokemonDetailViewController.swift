@@ -81,8 +81,6 @@ extension PokemonDetailViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = myTableView1.dequeueReusableCell(withIdentifier: controllerDetail.withIdentifier, for: indexPath) as? CustomCellListPokemonTableViewCell
-        
         if tableView == myTableView1 {
             
             let cell = self.myTableView1.dequeueReusableCell(withIdentifier: controllerDetail.withIdentifier, for: indexPath) as? CustomCellListPokemonTableViewCell

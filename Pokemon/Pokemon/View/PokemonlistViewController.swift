@@ -57,24 +57,23 @@ extension PokemonListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = self.myTableView.dequeueReusableCell(withIdentifier: controllerList.withIdentifier, for: indexPath) as? CustomCellListPokemonTableViewCell
-        
-        if let cell = cell {
+        if let cell = self.myTableView.dequeueReusableCell(withIdentifier: controllerList.withIdentifier, for: indexPath) as? CustomCellListPokemonTableViewCell {
             
             cell.setupCell(result: controllerList.dequeueReusableCell(indexPath: indexPath))
+            
+            return cell
         }
         
-        return  cell ?? UITableViewCell()
+        return  UITableViewCell ()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let pokDetail = self.storyboard?.instantiateViewController(withIdentifier: "detail") as? PokemonDetailViewController
+        if let pokDetail = self.storyboard?.instantiateViewController(withIdentifier: controllerList.withIdentifier2) as? PokemonDetailViewController {
         
-        if let pokDetail = pokDetail {
             pokDetail.controllerDetail.setPokemonResult(pokemonResult: controllerList.dequeueReusableCell(indexPath: indexPath))
             
-        self.present(pokDetail, animated: true, completion: nil)
+            self.navigationController?.pushViewController(pokDetail, animated: true)
         }
     }
 }

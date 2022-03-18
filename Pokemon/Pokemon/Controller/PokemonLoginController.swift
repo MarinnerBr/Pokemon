@@ -10,7 +10,7 @@ import UIKit
 class PokemonLoginController: NSObject {
 
     let request = RequestLogin()
-    var withIdentifier = "list"
+    var withIdentifier = "nav"
     var alertControllerTitle = "Error"
     var alertControllerMessage = "Usuário Errado"
     var alertActionTitle = "OK"
